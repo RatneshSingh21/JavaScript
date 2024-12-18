@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="watch.css">
+</head>
+<body>
+    <div id="container">
+        <h1 id="displayTime">00:00:00</h1>
+        <div id="button">
+            <img src="./images/stop.png"  alt="" srcset="" onclick="watchStop()">
+            <img src="./images/start.png" id="st" alt="" srcset="" onclick="startWatch()">
+            <img src="./images/reset.png" alt="" srcset="" onclick="resetWatch()">
+        </div>
+    </div>
+</body>
+<script>
+   const displayTime=document.getElementById('displayTime');
+   let [hours,minutes,second]=[0,0,0];
+   let timer=null;
+
+   function stopWatch()
+   {
+      second++;
+      if(second==60)
+      {
+        second=0;
+        minutes++;
+        if(minutes==60)
+      {
+        minutes=0;
+        hours++;
+      }
+      }
+      let h=(hours<10)?'0'+hours:hours;
+      let m=(minutes<10)?'0'+minutes:minutes;
+      let s=(second<10)?'0'+second:second;
+
+      displayTime.innerHTML=h+":"+m+":"+s;
+   }
+
+   function startWatch()
+   {
+      if(timer!=null)
+      {
+         clearInterval(timer);
+      }
+      timer=setInterval(stopWatch,1000)
+   }
+
+   function watchStop(){
+    clearInterval(timer);
+   }
+
+   function resetWatch(){
+    clearInterval(timer);
+    [hours,minutes,second]=[0,0,0];
+    displayTime.innerHTML="00:00:00";
+   }
+</script>
+</html>

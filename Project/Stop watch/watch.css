@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: aquamarine;
+}
+#container{
+    width: 500px;
+    height: 300px;
+    border: 1px solid black;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    background-color: rgb(148, 122, 122);
+    text-align: center;
+}
+h1{
+    margin-top: 60px;
+    font-size: 64px;
+    font-weight: 300;
+}
+#button{
+    width: 90%;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 28px;
+    bottom: 8%;
+    position: absolute;
+}
+#button img{
+    width: 50px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+#button img:nth-child(2){
+    width: 80px;
+}

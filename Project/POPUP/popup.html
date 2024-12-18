@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POP UP</title>
+    <link rel="stylesheet" href="popUp.css">
+</head>
+<body>
+   <div class="container">
+            <button type="submit" id="btn" onclick="openPop()">Submit</button>
+            <div id="popup" >
+                <img src="tick.png" >
+                 <h2>Thank You!</h2>
+                 <p>Your details has been successfully submitted.Thanks!</p>
+                 <button type="button" onclick="closePop()">ok</button>
+            </div>
+   </div>
+
+   <script>
+    const popup =document.getElementById("popup");
+    
+      function openPop()
+      {
+        popup.style.visibility = "visible";
+         popup.style.top = "50%";
+         popup.style.transform = "translate(-50%,-50%) scale(1)";
+        // popup.classList.add("open-popup");
+        // console.log('ggggg');
+        
+      }
+      function closePop()
+      {
+        popup.classList.remove("openPopup");
+        console.log("andajsdn")
+        popup.style.visibility = "hidden";
+         popup.style.top = "0";
+         popup.style.transform = "translate(-50%,-50%) scale(0.1)";
+      }
+</script>
+</body>
+
+</html>
